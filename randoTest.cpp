@@ -2,7 +2,7 @@
  * Unit Tests for Rando Test
 **/
 
-#include <gtest/gtest.h>
+#include <gtest\gtest.h>
 #include "rando.h"
 
 /*  
@@ -27,4 +27,22 @@ TEST(RandoTest, allChildrenSmile)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
+}
+
+TEST(RandoTest, IsPrime_PimeNum)
+{
+	Rando rando;
+	ASSERT_TRUE(rando.isPrime(4));
+}
+
+TEST(RandoTest, IsPrime_NonPimeNum)
+{
+	Rando rando;
+	ASSERT_FALSE(rando.isPrime(5));
+}
+
+TEST(RandoTest, IsPrime_Zero)
+{
+	Rando rando;
+	ASSERT_FALSE(rando.isPrime(0));
 }
