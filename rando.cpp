@@ -1,6 +1,6 @@
 #include "rando.h"
 //#include <stdlib.h>
-
+#include <cmath>
 
 /**
  * Worry if only one child is smiling or if all children are smiling
@@ -29,7 +29,20 @@ bool Rando::isDivisbleBy(int first, int second)
 **/
 bool Rando::isPrime(int num)
 {
-	return true;
+	if (num == 0 || num == 1)
+	{
+		return 0;
+	}
+	
+	for (int i = 2; i < num; i++)
+	{
+		if (num % i == 0)
+		{
+			return 1;
+		}
+	}
+	
+	return 0;
 }
 
 /**
@@ -38,5 +51,12 @@ bool Rando::isPrime(int num)
 **/
 int Rando::nearestToZero(int a, int b)
 {
-	return 0;
+	if (std::abs(a) < std::abs(b) && a != 0)
+	{
+		return a;
+	}
+	else
+	{
+		return b;
+	}
 }
